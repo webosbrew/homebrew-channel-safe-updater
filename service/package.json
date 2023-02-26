@@ -1,0 +1,4 @@
+{
+    "name": "org.webosbrew.safeupdate.service",
+    "main": "service.js"
+}
