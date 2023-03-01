@@ -8,7 +8,7 @@
     "package": "ares-package -n -o dist/ build/",
     "deploy": "ares-install dist/${npm_package_name}_${npm_package_version}_all.ipk",
     "launch": "ares-launch ${npm_package_name}",
-    "build-manifest": "webosbrew-gen-manifest -a build/appinfo.json -p dist/${npm_package_name}_${npm_package_version}_all.ipk  -i assets/icon.png -o dist/${npm_package_name}.manifest.json -l https://github.com/webosbrew/homebrew-channel-safe-updater"
+    "build-manifest": "webosbrew-gen-manifest -a build/appinfo.json -p dist/${npm_package_name}_${npm_package_version}_all.ipk  -i assets/icon.png -o dist/${npm_package_name}.manifest.json -l https://github.com/webosbrew/homebrew-channel-safe-updater -r true"
   },
   "author": "",
   "license": "ISC",
