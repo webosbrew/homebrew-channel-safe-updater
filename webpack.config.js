@@ -20,7 +20,7 @@ module.exports = (env) => [
       // userScript: './src/userScript.js',
     },
     output: {
-      path: path.resolve(__dirname, './dist'),
+      path: path.resolve(__dirname, './build'),
       filename: ({ chunk: { name } }) => (name === 'userScript') ? 'webOSUserScripts/[name].js' : '[name].js',
       chunkFormat: 'commonjs',
     },
@@ -77,7 +77,7 @@ module.exports = (env) => [
       service: './service/service.js',
     },
     output: {
-      path: path.resolve(__dirname, './dist/service'),
+      path: path.resolve(__dirname, './build/service'),
       chunkFormat: 'commonjs',
     },
     externals: {
