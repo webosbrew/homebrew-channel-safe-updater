@@ -43,8 +43,15 @@ function log(s) {
   c.scrollTop = c.scrollHeight;
 }
 
+let busy = false;
+function updateBusy(b) {
+  busy = b;
+  document.querySelector('.loading-overlay').style.display = busy ? 'block' : 'none';
+}
+
 (async () => {
   try {
+    updateBusy(true);
     log('Checking self...');
     const resp = await lunaCall('luna://org.webosbrew.safeupdate.service/status', {});
     if (resp.uid !== 0) {
@@ -57,14 +64,15 @@ function log(s) {
     log("Done. Ready.");
   } catch (err) {
     log(`An error occured: ${err.stack}`);
+  } finally {
+    updateBusy(false);
   }
 })();
-
-let busy = false;
 
 document.addEventListener('keyup', async (evt) => {
   let command;
   if (busy) return;
+  updateBusy(true);
   try {
     if (evt.which === 49) {
       log("Fetching latest version...");
@@ -123,5 +131,6 @@ document.addEventListener('keyup', async (evt) => {
     log(`An error occured: ${err.message}`);
   } finally {
     busy = false;
+    updateBusy(false);
   }
 });

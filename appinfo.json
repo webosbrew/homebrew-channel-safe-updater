@@ -5,6 +5,6 @@
   "title": "Homebrew Channel Updater",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
-  "iconColor": "#444444",
+  "iconColor": "#ff7300",
   "supportGIP": true
 }

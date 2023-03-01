@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "package": "ares-package -n dist",
+    "package": "ares-package -n dist/",
     "deploy": "ares-install ${npm_package_name}_${npm_package_version}_all.ipk",
     "launch": "ares-launch ${npm_package_name}",
-    "build-manifest": "webosbrew-gen-manifest -a dist/appinfo.json -p ${npm_package_name}_${npm_package_version}_all.ipk  -i assets/icon.png -o ${npm_package_name}.manifest.json -l https://google.com"
+    "build-manifest": "webosbrew-gen-manifest -a dist/appinfo.json -p ${npm_package_name}_${npm_package_version}_all.ipk  -i assets/icon.png -o ${npm_package_name}.manifest.json -l https://github.com/webosbrew/homebrew-channel-safe-updater"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
-    "@webosbrew/pub-utils": "^1.0.3",
+    "@webosbrew/pub-utils": "^1.1.0",
     "@webosose/ares-cli": "^2.2.0",
     "add-asset-webpack-plugin": "^2.0.1",
     "babel-loader": "^8.2.2",
