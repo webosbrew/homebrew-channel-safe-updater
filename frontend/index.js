@@ -23,20 +23,6 @@ function wait(s) {
   });
 }
 
-async function retry(attempt, cb) {
-  while (true) {
-    try {
-      return await cb();
-    } catch (err) {
-      if (attempt--) {
-        log (`An error occured, ${attempt} tries left...`);
-        continue;
-      }
-      throw err;
-    }
-  }
-}
-
 function log(s) {
   const c = document.querySelector('pre');
   c.innerText += `[${new Date()}] ${s}\n`;
@@ -111,7 +97,7 @@ document.addEventListener('keyup', async (evt) => {
     } else if (evt.which == 50) {
       command = '/media/developer/apps/usr/palm/services/org.webosbrew.hbchannel.service/elevate-service';
     } else if (evt.which == 56) {
-      command = 'telnetd -l /bin/sh';
+      command = 'PATH=$PATH:/media/developer/apps/usr/palm/services/org.webosbrew.hbchannel.service/bin telnetd -l /bin/sh';
     } else if (evt.which == 57) {
       command = '/var/lib/webosbrew/startup.sh';
     } else {
@@ -128,7 +114,7 @@ document.addEventListener('keyup', async (evt) => {
     log('Finished.');
     console.info('event:', evt);
   } catch (err) {
-    log(`An error occured: ${err.message}`);
+    log(`An error occurred: ${err.message}`);
   } finally {
     busy = false;
     updateBusy(false);
