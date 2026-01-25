@@ -29,7 +29,7 @@ service.register('exec', (message) => {
     if (error) {
       message.respond({ returnValue: false, errorText: error.message, ...response });
     } else {
-      message.respond({ returnVaule: true, ...response });
+      message.respond({ returnValue: true, ...response });
     }
   });
 });
