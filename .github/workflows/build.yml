@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: 16
+          node-version: latest
           cache: 'npm'
 
       - name: Install dependencies
@@ -28,11 +28,11 @@ jobs:
       - name: Build manifest
         run: npm run build-manifest
 
-      - name: Upload artiacts
-        uses: actions/upload-artifact@v3
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v6
         with:
           name: webos-snapshot
-          path: "dist/*"
+          path: 'dist/*'
 
       - name: Release
         uses: softprops/action-gh-release@v1
