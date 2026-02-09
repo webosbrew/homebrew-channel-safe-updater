@@ -1,6 +1,6 @@
 {
   "name": "org.webosbrew.safeupdate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Homebrew Channel Safe Updater",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
+    "@webos-tools/cli": "^3.2.1",
     "@webosbrew/pub-utils": "^1.1.0",
-    "@webosose/ares-cli": "^2.2.0",
     "add-asset-webpack-plugin": "^2.0.1",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",
